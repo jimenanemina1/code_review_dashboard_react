@@ -3,14 +3,6 @@ import SmallCard from './SmallCard';
 
 //import DataParts from './DataParts';
 
-/*  Cada set de datos es un objeto literal */
-
-	// Function para traer datos de la api de omdb
-  
-// Function para traer datos de la api de omdb
-
-
-
 
 
 function ContentRowProducts(){
@@ -24,7 +16,7 @@ function ContentRowProducts(){
 	// Function para traer datos de la api de omdb users
 	const fetchApiUsers = () => {
 		return new Promise((resolve, reject) => {
-			return fetch('http://localhost:3001/api/users/')
+			return fetch('http://localhost:3001/api/user/')
 				.then(res => res.json())
 				.then(res => resolve(res.count))
                	.catch(err => reject(err));
@@ -44,7 +36,7 @@ function ContentRowProducts(){
 // Function para traer datos de la api de omdb productos
 const fetchApiProducts = () => {
     return new Promise((resolve, reject) => {
-        return fetch('http://localhost:3001/api/products/')
+        return fetch('http://localhost:3001/api/product/')
             .then(res => res.json())
             .then(res => resolve(res.count))
                .catch(err => reject(err));
@@ -63,7 +55,7 @@ React.useEffect(() => {
 // Function para traer datos de la api de omdb orders
 const fetchApiOrders = () => {
     return new Promise((resolve, reject) => {
-        return fetch('http://localhost:3001/api/orders/')
+        return fetch('http://localhost:3001/api/order/')
             .then(res => res.json())
             .then(res => resolve(res.count))
             .catch(err => reject(err)); 
@@ -81,7 +73,7 @@ React.useEffect(() => {
 
 const fetchApiOrdersAvg = () => {
     return new Promise((resolve, reject) => {
-        return fetch('http://localhost:3001/api/orders/')
+        return fetch('http://localhost:3001/api/order/')
             .then(res => res.json())
             .then(res => resolve(res.totalRevenue))
             .catch(err => reject(err)); 
@@ -102,7 +94,7 @@ React.useEffect(() => {
 //const ventas = CountOrders.split(',');
 console.log(CountOrders);
     let salesInDB = {
-        title: 'Total Orders',
+        title: 'Total Ordenes',
         color: 'primary', 
         cuantity: CountOrders,
         icon: 'fa-clipboard-list'
@@ -111,7 +103,7 @@ console.log(CountOrders);
     
     
     let totalProducts = {
-        title:' Total Products', 
+        title:' Total Productos', 
         color:'success', 
         cuantity: CountProducts,
         icon:'fa-award'
@@ -119,14 +111,14 @@ console.log(CountOrders);
     
 
     let registerUsers = {
-        title:'Registered users' ,
+        title:'Total Usuarios' ,
         color:'warning',
         cuantity:CountUser,
         icon:'fa-user-check'
     }
     
     let salesAvg = {
-        title:'sales avg' ,
+        title:'Total Ventas' ,
         color:'warning',
         cuantity:AvgOrders,
         icon:'fa-user-check'

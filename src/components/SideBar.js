@@ -42,7 +42,7 @@ function SideBar(){
                 <li className="nav-item">
                 <Link className="nav-link" to="/CategoriesInDb">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Categorias</span>
                     </Link>
                 </li>
 
@@ -50,20 +50,20 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/MostSelledProductsInDb">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
+                        <span>Último Producto</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/ContentRowProducts">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Totales</span></Link>
                 </li>
 
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/search">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>search</span></Link>
+                        <span>Buscar Productos</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
