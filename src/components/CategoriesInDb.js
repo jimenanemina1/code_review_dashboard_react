@@ -1,51 +1,56 @@
 import React from "react";
+import CategoriesinDbRow from './CategoriesinDbRow';
+
 
 function CategoriesInDb() {
+const [DataCategory,setDataCategory] = React.useState([]);
+
+
+  // Function para traer datos de la api de omdb productos
+  const fetchApiCategories = () => {
+      return new Promise((resolve, reject) => {
+          return fetch('http://localhost:3001/api/category/')
+              .then(res => res.json())
+              .then(res => resolve(res.categories))
+                 .catch(err => reject(err));
+      });
+  }
+  
+  React.useEffect(() => {
+      fetchApiCategories()
+          .then(categories => {
+            setDataCategory(categories);
+             })
+          .catch(err => console.error(err));
+          
+  }, []);
+  
+  console.log(DataCategory);
+  
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h5 className="m-0 font-weight-bold text-gray-800">
-            Categories
+            Categorias
           </h5>
         </div>
         <div className="card-body">
-          <div className="row">
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Cafe</div>
-              </div>
+          <div className="row">{
+          DataCategory.map( ( row , i) => {
+          return <div className="col-lg-6 mb-4">
+            <div className="card bg-dark text-white shadow">
+              <div className="card-body">{row.name}<CategoriesinDbRow { ...row} key={i}/></div>
+              
             </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Coladores</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Capsulas</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Obsequios</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Cafetera Industrial</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Cafe de exportacion</div>
-              </div>
-            </div>
-            
           </div>
+          })}
+           
+           </div>
         </div>
       </div>
     </div>
+
   );
 }
 

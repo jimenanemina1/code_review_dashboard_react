@@ -1,26 +1,51 @@
 import React from 'react';
 import ChartRow from './ChartRow';
 
-let tableRowsData = [
-    {
-        Name: 'Cafe Expreso',
-        Precio: '123',
-        Descuento: '5',
-        Categories: 'cafe',
-        
-    },
-    {
-        Name: 'Maquina premium',
-        Precio: '142',
-        Descuento: '0',
-        Categories: 'Maquina de cafe',
-       
-    },
-    
-]
-
-
 function Chart (){
+const [DataProduct,setDataProduct] = React.useState([]);
+
+// Function para traer datos de la api de omdb productos
+const fetchApiProducts = () => {
+    return new Promise((resolve, reject) => {
+        return fetch('http://localhost:3001/api/product/')
+            .then(res => res.json())
+            .then(res => resolve(res.products))
+               .catch(err => reject(err));
+    });
+}
+
+React.useEffect(() => {
+    fetchApiProducts()
+        .then(products => {
+            setDataProduct(products);
+           })
+        .catch(err => console.error(err));
+        
+}, []);
+
+console.log(DataProduct);
+
+
+// let tableRowsData = [
+//     {
+//         Name: 'Cafe Expreso',
+//         Precio: '123',
+//         Descuento: '5'
+      
+        
+//     },
+//     {
+//         Name: 'Maquina premium',
+//         Precio: '142',
+//         Descuento: '0'
+       
+       
+//     },
+    
+// ]
+
+
+
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -29,24 +54,25 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>price</th>
-                                <th>Discount</th>
-                                <th>Génres</th>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                                           
                                 
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Name</th>
-                                <th>price</th>
-                                <th>Discount</th>
-                                <th>Génres</th>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                
+                               
                             </tr>
                         </tfoot>
                         <tbody>
                             {
-                            tableRowsData.map( ( row , i) => {
+                            DataProduct.map( ( row , i) => {
                                 return <ChartRow { ...row} key={i}/>
                             })
                             }
@@ -59,5 +85,6 @@ function Chart (){
 
     )
 }
+
 
 export default Chart;
