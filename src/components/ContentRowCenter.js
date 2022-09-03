@@ -1,13 +1,12 @@
 import React from 'react';
-import MostSelledProductsInDb from './MostSelledProductsInDb';
 import CategoriesInDb from './CategoriesInDb';
+import LastProducts from './LastProducts';
 
 function ContentRowCenter(){
     return (
         <div className="row">
             
-          
-            <MostSelledProductsInDb />
+            <LastProducts />
             <CategoriesInDb />
 
         </div>

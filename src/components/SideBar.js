@@ -2,11 +2,12 @@ import React from 'react';
 import image from '../assets/images/barizta-logo.png';
 import ContentWrapper from './ContentWrapper';
 import CategoriesInDb from './CategoriesInDb';
-import MostSelledProductsInDb from './MostSelledProductsInDb';
+import LastProducts from './LastProducts';
+import Chart from './Chart';
 import ContentRowProducts from './ContentRowProducts';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
-import SearchProducts from './SearchProducts';
+
 
 
 function SideBar(){
@@ -48,7 +49,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/MostSelledProductsInDb">
+                    <Link className="nav-link" to="/LastProducts">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Último Producto</span></Link>
                 </li>
@@ -59,12 +60,9 @@ function SideBar(){
                         <i className="fas fa-fw fa-table"></i>
                         <span>Totales</span></Link>
                 </li>
+               
 
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/search">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Buscar Productos</span></Link>
-                </li>
+                
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
@@ -77,16 +75,15 @@ function SideBar(){
                 <Route path="/CategoriesInDb">
                     <CategoriesInDb />
                 </Route>
-                <Route path="/MostSelledProductsInDb">
-                    <MostSelledProductsInDb />
+                <Route path="/LastProducts">
+                    <LastProducts />
                 </Route>
                 <Route path="/ContentRowProducts">
                     <ContentRowProducts />
                 </Route>
-                <Route path="/search">
-                    <SearchProducts />
+                <Route path="/Chart">
+                    <Chart />
                 </Route>
-
                 <Route component={NotFound} />
             </Switch>
            
