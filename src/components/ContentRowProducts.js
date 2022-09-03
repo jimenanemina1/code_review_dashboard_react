@@ -117,6 +117,7 @@ console.log(CountOrders);
         icon:'fa-user-check'
     }
     
+    
     let salesAvg = {
         title:'Total Ventas' ,
         color:'warning',
