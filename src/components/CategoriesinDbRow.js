@@ -24,9 +24,9 @@ const [DataCategoryDetail,setDataCategoryDetail] = React.useState([]);
     }, []);
 console.log(DataCategoryDetail);
     return (
-               
+            <center>      
             <h5>{DataCategoryDetail}</h5>
-                                       
+            </center>                             
                
             )
     }

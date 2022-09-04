@@ -32,7 +32,7 @@ const [DataCategory,setDataCategory] = React.useState([]);
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h5 className="m-0 font-weight-bold text-gray-800">
-            Categorias
+            Categorias X cantidades de productos asocidos
           </h5>
         </div>
         <div className="card-body">
@@ -40,8 +40,9 @@ const [DataCategory,setDataCategory] = React.useState([]);
           DataCategory.map( ( row , i) => {
           return <div className="col-lg-6 mb-4">
             <div className="card bg-dark text-white shadow">
-              <div className="card-body">{row.name}<CategoriesinDbRow { ...row} key={i}/></div>
-              
+              <center>
+              <div className="card-body" style={{ backgroundColor:"#4a6554" }}>{row.name}<CategoriesinDbRow { ...row} key={i}/></div>
+              </center>
             </div>
           </div>
           })}

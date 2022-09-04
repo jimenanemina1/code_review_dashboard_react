@@ -106,7 +106,7 @@ console.log(CountOrders);
         title:' Total Productos', 
         color:'success', 
         cuantity: CountProducts,
-        icon:'fa-award'
+        icon:'fa-teeth'
     }
     
 
@@ -122,7 +122,7 @@ console.log(CountOrders);
         title:'Total Ventas' ,
         color:'warning',
         cuantity:AvgOrders,
-        icon:'fa-user-check'
+        icon:'fa-credit-card'
     }
     let cartProps = [salesInDB,totalProducts, registerUsers, salesAvg];
     return (
