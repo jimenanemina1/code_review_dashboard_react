@@ -7,7 +7,7 @@ import Chart from './Chart';
 import ContentRowProducts from './ContentRowProducts';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
-
+import Marquee from "react-fast-marquee";
 
 
 function SideBar(){
@@ -73,18 +73,40 @@ function SideBar(){
                     <ContentWrapper />
                 </Route>
                 <Route path="/CategoriesInDb">
+                <div className="row">
+                <center>
                     <CategoriesInDb />
+                </center>
+                </div> 
                 </Route>
                 <Route path="/LastProducts">
-                    <LastProducts />
+                <div className="row">
+                <center>
+                 <LastProducts />
+                 </center>    
+                </div> 
                 </Route>
                 <Route path="/ContentRowProducts">
-                    <ContentRowProducts />
+                <div className="col-md-16 mb-1">
+                <br></br>
+                <center>
+                    <h3>Totales</h3>
+                    <br></br>
+                    <Marquee>
+					<ContentRowProducts />
+					</Marquee>
+                </center>
+                </div>
                 </Route>
                 <Route path="/Chart">
+                <center>
+                <h3>Listado de Productos</h3>
                     <Chart />
+                </center>    
                 </Route>
+               
                 <Route component={NotFound} />
+                
             </Switch>
            
         </React.Fragment>

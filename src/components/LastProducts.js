@@ -46,7 +46,7 @@ const [DataProducts,setDataProducts] = React.useState([]);
                   </div>
                  
                 <div> 
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/Chart">Listado de Productos</a>
+                    <a className="btn btn-danger"  href="/Chart">Listado de Productos</a>
                 </div>
                 </div>
             </div>

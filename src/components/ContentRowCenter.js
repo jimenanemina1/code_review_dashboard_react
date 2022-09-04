@@ -5,10 +5,8 @@ import LastProducts from './LastProducts';
 function ContentRowCenter(){
     return (
         <div className="row">
-            
-            <LastProducts />
             <CategoriesInDb />
-
+            <LastProducts />
         </div>
     )
 }

@@ -63,7 +63,7 @@ console.log(Coffe);
 
 					</ul>
 					<Marquee>
-					<h3>Bienvenidos!!! Code Review... Indicadores Dolar Blue Venta {dolar} - Cafe {Coffe}</h3>
+					<h3>Bienvenidos!!! Code Review... Indicadores Dolar {dolar} -- Cafe {Coffe}</h3>
 					</Marquee>
 					{/* <marquee behavior="scroll" direction="left"><h3>Bienvenidos!!! Code Review... Indicadores Dolar Blue Venta {dolar} - Cafe {Coffe}</h3></marquee> */}
 				</nav>
